@@ -25,6 +25,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'dotenv-rails', :groups => [:development, :test], :require => 'dotenv/rails-now'
 # gem 'rest-client', :require => 'rest-client'
 gem 'unirest', :require => 'unirest'
+ruby "2.3.3"
 
 group :development, :test do
   gem 'better_errors'
