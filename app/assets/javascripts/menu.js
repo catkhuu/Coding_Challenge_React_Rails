@@ -1,8 +1,9 @@
+'use strict'
+
 $(function() {
   // retrieve new menu form
   $('#menu-new-btn-section').on('click', '#menu-new-btn', function(event) {
     event.preventDefault();
-    alert('this works');
     hideButtons();
     var $newMenuBtn = $(this);
     var route = $newMenuBtn.attr('href');
@@ -45,7 +46,7 @@ $(function() {
       type: method,
       data: data
     }).done(function(response) {
-      alert(response);
+
       $('tbody').prepend(response);
       showButtons();
     })
