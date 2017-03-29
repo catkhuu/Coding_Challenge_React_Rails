@@ -1,24 +1,38 @@
 <div class='col s12 menu-recipe-new-container'>
   <div class='container'>
-    <h2 class='center-align blue-text'>Add Recipe to <%= @menu['title'] %> Menu</h2>
 
     <% if @recipes.any? %>
-
-      <%= form_tag(menu_recipes_path, method: 'POST', id: 'menu-recipe-new-form') do %>
-        <div class="input-field col s12">
-          <%= select_tag('recipe_id', options_for_select(@recipes.collect{ |recipe| [recipe['name'], recipe['id']] }), include_blank: 'Select recipe') %>
-
-          <label>Recipes</label>
+      <div class='row menu-recipe'>
+        <div class='row'>
+          <div class='offset-s5 col s7'>
+            <h4 class='blue-text'>Add Recipe to <%= @menu['title'] %> Menu</h4>
+          </div>
         </div>
-        <input type="submit" value="Create" class="waves-effect waves-light btn #039be5 light-blue darken-1", id="menu-recipe-new-submit-btn">
+        <div class='col s7 offset-s5'>
+          <%= form_tag(menu_recipes_path, method: 'POST', id: 'menu-recipe-new-form') do %>
+            <div class="input-field col s8">
+              <%= select_tag('recipe_id', options_for_select(@recipes.collect{ |recipe| [recipe['name'], recipe['id']] }), include_blank: 'Select recipe') %>
+
+              <label>Recipes</label>
+            </div>
+            <div class='input-field col s8'>
+              <input type="submit" value="Create" class="waves-effect waves-light btn #039be5 light-blue darken-1", id="menu-recipe-new-submit-btn">
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <p>No recipes have been created.</p>
       <% end %>
-
-    <% else %>
-      <p>No recipes have been created.</p>
-    <% end %>
-
-    <h3>Don't see the recipe you are looking for?</h3>
-    <%= link_to 'Create new recipe', new_recipe_path, :class => "waves-effect waves-light btn #e53935 red-darken-1", id: 'recipe-new-btn' %>
-
+      </div>
+      <div class='row create-recipe-new-btn-container'>
+        <div class='col s7 offset-s5'>
+          <h5 class="text-blue menu-recipe">Can't find what you're looking for?</h5>
+        </div>
+      </div>
+      <div class='row create-recipe-new-btn-container'>
+        <div class='offset-s5 col s7'>
+          <%= link_to 'Create new recipe', new_recipe_path, :class => "waves-effect waves-light btn orange", id: 'recipe-new-btn' %>
+        </div>
+      </div>
   </div>
 </div>
