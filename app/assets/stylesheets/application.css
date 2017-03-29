@@ -11,6 +11,12 @@ footer {
   margin: 5%;
 }
 
+/*pages#index*/
+
+.greeting-btns {
+  margin-bottom: 30%;
+}
+
 /*menus#index*/
 
 .menus-list {
