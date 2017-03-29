@@ -1,0 +1,34 @@
+<div class='menus-index-container'>
+  <div class='container'>
+    <h2 class='center-align'>Menus</h2>
+      <div class='row'>
+        <div class='col s6'>
+          <table class='menus-list'>
+            <tbody>
+              <% if @menus.any? %>
+                <% @menus.each do |menu| %>
+                  <%= render partial: 'menus_index', locals: { menu: menu } %>
+                <% end %>
+            </tbody>
+          </table>
+              <% else %>
+                </tbody>
+              </table>
+                <div class='row'>
+                  <div class='col s6'>
+                    <p class='menus-empty-msg'>There currently are no menus.</p>
+                  </div>
+            <% end %>
+          </div>
+
+
+    <% if admin? %>
+      <div class='col s6' id='menu-new-btn-section'>
+        <section class='right-align'>
+          <%= link_to 'Create Menu', new_menu_path, :class => "waves-effect waves-light btn #039be5 light-blue darken-1", id: 'menu-new-btn' %>
+        </section>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

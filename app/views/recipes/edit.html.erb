@@ -1,0 +1,13 @@
+<div class='col s6 offset-s6 recipe-edit-container'>
+  <div class='container'>
+    <h2 class='center-align blue-text'>Edit Recipe</h2>
+
+    <%= form_tag(recipe_path(@recipe['id']), method: 'PUT', id: 'recipe-edit-form') do %>
+      <label for="name" class="blue-text">Name</label>
+      <input id="name" name="name" type="text" value="<%= @recipe['name'] %>" class="validate black-text">
+      <label for="description" class="blue-text">Description</label>
+      <input id="description" name="description" type="text" value="<%= @recipe['description'] %>" class="validate black-text">
+      <input type="submit" value="Submit" class="waves-effect waves-light btn #039be5 light-blue darken-1", id="recipe-edit-submit-btn">
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class='col s6 offset-s6 menu-new-container'>
+  <div class='container'>
+    <h2 class='center-align blue-text'>Create Menu</h2>
+
+    <%= form_tag('/menus', method: 'POST', id: 'menu-new-form') do %>
+      <label for="title" class="blue-text">Title</label>
+      <input id="title" name="title" type="text" class="validate black-text">
+      <input type="submit" value="Create" class="waves-effect waves-light btn #039be5 light-blue darken-1", id="menu-new-submit-btn">
+    <% end %>
+  </div>
+</div>

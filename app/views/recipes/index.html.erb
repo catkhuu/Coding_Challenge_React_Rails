@@ -1,0 +1,34 @@
+<div class='recipes-index-container'>
+  <div class='container'>
+    <h2 class='center-align'>Recipes</h2>
+      <div class='row'>
+        <div class='col s6'>
+          <table class='recipes-list'>
+            <tbody>
+              <% if @recipes.any? %>
+                <% @recipes.each do |recipe| %>
+                  <%= render partial: 'recipes_index', locals: { recipe: recipe } %>
+                <% end %>
+            </tbody>
+          </table>
+              <% else %>
+                </tbody>
+              </table>
+                <div class='row'>
+                  <div class='col s6'>
+                    <p class='recipes-empty-msg'>There are no recipes.</p>
+                  </div>
+            <% end %>
+          </div>
+
+
+    <% if admin? %>
+      <div class='col s6' id='recipe-new-btn-section'>
+        <section class='right-align'>
+          <%= link_to 'Create Recipe', new_recipe_path, :class => "waves-effect waves-light btn #039be5 light-blue darken-1", id: 'recipe-new-btn' %>
+        </section>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
