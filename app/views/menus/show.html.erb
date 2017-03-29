@@ -1,10 +1,13 @@
-<div>
-  <h2><%= @menu['title'] %></h2>
+<div class='row menu-page'>
+  <div class='offset-s5 col s7'>
+    <h2 class="menu-show-title"><%= @menu['title'] %></h2>
+  </div>
 
-  <% if @recipes.any? %>
+  <% if @menu_recipes.any? %>
+    <div class='col s7 offset-s5'>
     <table>
       <tbody>
-        <% @recipes.each do |recipe| %>
+        <% @menu_recipes.each do |recipe| %>
           <tr>
             <td><%= link_to "#{recipe['name']}", recipe_path(recipe['id']) %></td>
             <% if admin? %>
@@ -15,17 +18,24 @@
         <% end %>
         </tbody>
     </table>
+  </div>
   <% else %>
-    <p>This menu contains no recipes.</p>
+    <div class='row'>
+      <div class='col s7 offset-s5'>
+        <p>This menu contains no recipes.</p>
+      </div>
+    </div>
   <% end %>
 
   <% if admin? %>
-    <section>
-      <% if @recipes.empty? %>
-        <%= link_to 'Create Recipe', new_recipe_path, :class => "waves-effect waves-light btn #e53935 red-darken-1", id: 'recipe-new-btn' %>
-      <% else %>
-        <%= link_to 'Add Recipe', new_menu_recipe_path(@menu['id']), :class => "waves-effect waves-light btn #e53935 red-darken-1", id: 'menu_recipe-new-btn' %>
-      <% end %>
-    </section>
+    <div class='offset-s5 col s7'>
+      <section>
+        <% if @recipes.empty? %>
+          <%= link_to 'Create Recipe', new_recipe_path, :class => "waves-effect waves-light btn #e53935 red-darken-1", id: 'recipe-new-btn' %>
+        <% else %>
+          <%= link_to 'Add Recipe', new_menu_recipe_path(@menu['id']), :class => "waves-effect waves-light btn orange", id: 'menu_recipe-new-btn' %>
+        <% end %>
+      </section>
+    </div>
   <% end %>
 </div>
