@@ -1,0 +1,7 @@
+<tr id="menu<%= menu['id'] %>">
+  <td><%= link_to "#{menu['title']}", menu_path(menu['id']), :class => "waves-effect waves-light btn #ffab91 deep-orange lighten-3" %></td>
+  <% if admin? %>
+    <td><%= link_to 'Edit', edit_menu_path(menu['id']), :class => "waves-effect waves-light btn #fb8c00 orange darken-1", id: 'menu-edit-btn' %></td>
+    <td><%= link_to 'Delete', menu_path(menu['id']), method: :delete, :class => "waves-effect waves-light btn #ef5350 red lighten-1", id: 'menu-delete-btn' %></td>
+  <% end %>
+</tr>

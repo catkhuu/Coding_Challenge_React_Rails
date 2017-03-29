@@ -1,0 +1,11 @@
+<div class='col s6 offset-s6 menu-edit-container'>
+  <div class='container'>
+    <h2 class='center-align blue-text'>Edit Menu</h2>
+
+    <%= form_tag(@path, method: 'PUT', id: 'menu-edit-form') do %>
+      <label for="title" class="blue-text">Title</label>
+      <input id="title" name="title" type="text" value="<%= @menu['title'] %>" class="validate black-text">
+      <input type="submit" value="Submit" class="waves-effect waves-light btn #039be5 light-blue darken-1", id="menu-edit-submit-btn">
+    <% end %>
+  </div>
+</div>
