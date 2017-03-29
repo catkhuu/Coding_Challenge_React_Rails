@@ -1,0 +1,24 @@
+<div class='col s12 menu-recipe-new-container'>
+  <div class='container'>
+    <h2 class='center-align blue-text'>Add Recipe to <%= @menu['title'] %> Menu</h2>
+
+    <% if @recipes.any? %>
+
+      <%= form_tag(menu_recipes_path, method: 'POST', id: 'menu-recipe-new-form') do %>
+        <div class="input-field col s12">
+          <%= select_tag('recipe_id', options_for_select(@recipes.collect{ |recipe| [recipe['name'], recipe['id']] }), include_blank: 'Select recipe') %>
+
+          <label>Recipes</label>
+        </div>
+        <input type="submit" value="Create" class="waves-effect waves-light btn #039be5 light-blue darken-1", id="menu-recipe-new-submit-btn">
+      <% end %>
+
+    <% else %>
+      <p>No recipes have been created.</p>
+    <% end %>
+
+    <h3>Don't see the recipe you are looking for?</h3>
+    <%= link_to 'Create new recipe', new_recipe_path, :class => "waves-effect waves-light btn #e53935 red-darken-1", id: 'recipe-new-btn' %>
+
+  </div>
+</div>
