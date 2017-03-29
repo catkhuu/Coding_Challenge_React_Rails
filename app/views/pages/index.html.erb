@@ -1,1 +1,21 @@
-<h1>Great Menu Viewing Page</h1>
+<div class='container'>
+  <div class='row'>
+      <div class='col s6'>
+        <h2>Welcome!</h2>
+      <divclass='col s6'>
+  </div>
+
+  <div class='row'>
+    <div class='offsets4 col s8'>
+      <h5 class='greeting-header'>Our menus and recipes are constantly changing. Come and see what we have!</h5>
+    </div>
+  </div>
+  <div class='row greeting-btns'>
+    <div class='col s6'>
+      <%= link_to 'Menus', menus_path, :class => "waves-effect waves-light btn #039be5 light-blue darken-1", id: 'menus-btn' %>
+    </div>
+    <div class='col s6'>
+      <%= link_to 'Recipes', recipes_path, :class => "waves-effect waves-light btn #039be5 light-blue darken-1", id: 'recipes-btn' %>
+    </div>
+  </div>
+</div>
