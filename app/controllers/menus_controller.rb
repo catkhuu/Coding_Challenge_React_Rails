@@ -23,7 +23,8 @@ class MenusController < ApplicationController
 
   def show
     @menu = @proxy_request.get_menu_title(params[:id])
-    @recipes = @proxy_request.list_menu_recipes(params[:id])
+    @menu_recipes = @proxy_request.list_menu_recipes(params[:id])
+    @recipes = @proxy_request.get_recipes
   end
 
   def edit
