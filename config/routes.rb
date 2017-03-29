@@ -1,3 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :menus do
+    resources :recipes,
+    controller: 'menu_recipes',
+    only: [:new, :create, :destroy],
+    param: :recipe_id
+  end
+  resources :recipes
+  resources :sessions, only: [:new, :create, :destroy]
+
+  root 'pages#index'
 end
