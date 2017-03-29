@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  before_action :require_login, only: [:destroy]
+  skip_before_action :generate_proxy_request
+
   def new
     @user = User.new
   end
@@ -7,9 +10,9 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:sessions][:username])
     if @user && @user.authenticate(params[:sessions][:password])
       session[:user_id] = @user.id
-      redirect_to user_profile_path(@user, @user.profile)
+      redirect_to menus_path
     else
-      @errors = ['Invalid email or password']
+      @errors = ['Invalid username or password']
       render 'new'
     end
   end
