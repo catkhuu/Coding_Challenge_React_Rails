@@ -7,6 +7,9 @@ class RecipesController < ApplicationController
   end
 
   def new
+    if request.xhr?
+      render 'new', layout: false
+    end 
   end
 
   def create
