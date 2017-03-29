@@ -1,0 +1,7 @@
+<tr id="recipe<%= recipe['id'] %>">
+  <td><%= link_to "#{recipe['name']}", recipe_path(recipe['id']), :class => "waves-effect waves-light btn #ffab91 deep-orange lighten-3" %></td>
+  <% if admin? %>
+    <td><%= link_to 'Edit', edit_recipe_path(recipe['id']), :class => "waves-effect waves-light btn #fb8c00 orange darken-1", id: 'recipe-edit-btn' %></td>
+    <td><%= link_to 'Delete', recipe_path(recipe['id']), method: :delete, :class => "waves-effect waves-light btn #ef5350 red lighten-1", id: 'recipe-delete-btn' %></td>
+  <% end %>
+</tr>

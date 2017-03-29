@@ -1,0 +1,16 @@
+<div>
+
+  <h2><%= @recipe['name'] %></h2>
+
+  <table>
+    <tbody>
+        <tr>
+          <td><%= @recipe['description'] %></td>
+          <% if admin? %>
+            <td><%= link_to 'Edit', edit_recipe_path(@recipe['id']), :class => "waves-effect waves-light btn #e53935 red-darken-1", id: 'recipe-edit-btn' %></td>
+            <td><%= link_to 'Delete', recipe_path(@recipe['id']), method: :delete, :class => "waves-effect waves-light btn #e53935 red-darken-1", id: 'recipe-delete-btn' %></td>
+          <% end %>
+        </tr>
+      </tbody>
+  </table>
+</div>
