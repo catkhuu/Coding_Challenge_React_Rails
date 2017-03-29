@@ -1,15 +1,30 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  margin: 5%;
+}
+
+/*menus#index*/
+
+/*.menus-index-container {
+  background-image:url('http://www.metmuseum.org/toah/images/hb/hb_1979.5.jpg');
+  background-size: cover;
+  height: 100%;
+}*/
+
+.menus-list {
+  height: 100%;
+  width: 40%;
+}
+
+#menu-new-btn {
+  margin-right: 20%;
+}
+
+/*.menus-index-image {
+  height: 80%;
+  max-width: 100%;
+}*/
