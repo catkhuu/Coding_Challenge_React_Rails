@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RestaurantMenus</title>
+    <title>Taste of the Yangtze</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
+    <div class="navbar-fixed">
+      <nav class='#6d4c41 brown darken-1'>
+       <div class="nav-wrapper">
+         <a href="#" class="brand-logo">Taste of the Yangtze</a>
+         <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/about">About</a></li>
+          <li><a href="/menus">Menus</a></li>
+          <li><a href="/recipes">Recipes</a></li>
+          <li><a href="/contact">Contact</a></li>
+         </ul>
+       </div>
+      </nav>
+    </div>
+
+    <% flash.each do |name, message| %>
+      <script type="text/javascript">
+      Materialize.toast('<%= message %>', 5000, 'rounded')
+      </script>
+    <% end %>
     <%= yield %>
   </body>
 </html>
