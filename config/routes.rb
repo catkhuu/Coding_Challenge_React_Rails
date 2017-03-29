@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get '/about' => 'pages#about'
+  get '/contact' => 'pages#contact'
+
   resources :menus do
     resources :recipes,
     controller: 'menu_recipes',
